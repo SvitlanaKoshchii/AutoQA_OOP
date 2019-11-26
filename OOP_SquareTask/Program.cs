@@ -15,7 +15,7 @@ namespace OOP_SquareTask
 
 				Console.WriteLine("Enter ROUND radius: ");
 				double radius = Convert.ToDouble(Console.ReadLine()); // radius
-				double roundSquare = pi * radius * 2; // round square calculation
+				double roundSquare = pi * Math.Pow(radius,2); // round square calculation
 				Console.WriteLine("ROUND square equals to {0}", roundSquare);
 
 			}
@@ -25,7 +25,7 @@ namespace OOP_SquareTask
 
 				Console.WriteLine("Enter SQUARE side : ");
 				double side = Convert.ToDouble(Console.ReadLine()); // side of square
-				double areaOfSquare = side * side; // area of square calculation
+				double areaOfSquare = Math.Pow(side,2); // area of square calculation
 				Console.WriteLine("Area of SQAURE  equals to {0}", areaOfSquare);
 			}
 
