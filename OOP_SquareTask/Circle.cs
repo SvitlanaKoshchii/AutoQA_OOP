@@ -8,17 +8,17 @@ namespace OOP_SquareTask
     {
         public double radius;
 
-        //Consctructor with side parameter
+        //Consctructor with radius parameter
         public Circle(double r)
         {
             radius = r;
         }
 
-        //method calculate area of square 
-        public void CalculateSquareArea() { }
+        //method calculate area of circle 
+        public void CalculateCircleArea() { }
 
-        //property Square
-        public double Side
+        //property RAdius
+        public double Radius
         {
             get
             {

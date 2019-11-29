@@ -17,7 +17,7 @@ namespace OOP_SquareTask
         //method calculate area of square 
         public void CalculateSquareArea() { }
 
-        //property Square
+        //property Side
         public double Side
         {
             get
