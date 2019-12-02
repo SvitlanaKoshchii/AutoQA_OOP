@@ -3,65 +3,86 @@
 namespace OOP_SquareTask
 {
     class Program
-    {
-        const double pi = 3.14; // pi
-        const double minRandomBorder = 0.5; // min random border
-        const double maxRandomBorder = 5; // max random border
-        private static double roundSquare;
+    {                
+        private static Square square;
+        private static Circle circle;
+        private static ValidationHelper helper;
 
-        // public int roundInputAttempt; //user input radius attempt
-
+        
         static void Main(string[] args)
         {
-            CalculateRoundSquare();
-            // CalculateSquareArea();
+            helper = new ValidationHelper();
+            CheckInputAttempt();
 
-            Program program = new Program();
 
-            static void CalculateRoundSquare()
-			{
-                Random random = new Random();                
-               
-                int roundInputAttempt;
-                double radius; // result side 
 
-                for (roundInputAttempt = 1; roundInputAttempt < 4; roundInputAttempt++)
+            static void CheckInputAttempt()
+            {
+                int inputAttempt = 0;
+                for (; inputAttempt < Constants.maxAttempt; inputAttempt++)
                 {
-                    Console.WriteLine("Enter ROUND radius: ");
-                    string radiusInput = Console.ReadLine(); // user input value for radius
-
-                    if (double.TryParse(radiusInput, out radius))
-                    {
-                        CalculateSquareFormlula(radius);  // round square calculation
-                        
-                        break;
-                    }
-                    else if (roundInputAttempt < 3)
-                    {
-                        Console.WriteLine("Wrong attempt {0}. Please, enter only numbers.", roundInputAttempt);
-                            
-                    }
-                    else
-                    {
-                        Console.WriteLine("Last attempt is reached. Radius is selected randomly.");
-
-                        radius = random.NextDouble() * (maxRandomBorder - minRandomBorder) + minRandomBorder;
-                        radius = GetRoundedNumber(radius);
-                        Console.WriteLine("Random radius = {0}", radius);
-
-                        CalculateSquareFormlula(radius);  // round square calculation
-                        
-                    }
-                    
+                    EnterSquareSide();                                        
                 }
-               
+
+                if (inputAttempt == Constants.maxAttempt)
+                {
+                    CreateSquare(GetRandomValue());
+                    ShowSquareArea();
+                }
             }
 
-            static void CalculateSquareFormlula(double radius)
+            static double GetRandomValue()
             {
-                double roundSquare = pi * Math.Pow(Math.Round(radius, 2), 2); // round square calculation formula
-                roundSquare = GetRoundedNumber(roundSquare);
-                Console.WriteLine("ROUND square equals to {0}", roundSquare);  
+
+                Console.WriteLine(Constants.showAttemptsEnded);
+
+                Random random = new Random();
+
+                double value = random.NextDouble() * (Constants.maxRandomBorder - Constants.minRandomBorder) + Constants.minRandomBorder;
+                value = Math.Round(value,2);
+                //value = GetRandomValue(value);
+                Console.WriteLine("Random radius = {0}", value);
+
+                return value;
+            }
+
+            static void EnterSquareSide()
+            {
+                Console.WriteLine(Constants.enterSquareSide);
+      
+                string sideInput = Console.ReadLine(); // user input value for side of square
+              
+                ValidateEnteredValue(sideInput);                
+
+            }
+
+         
+
+            static void ValidateEnteredValue(string value)
+            {
+                if (helper.IsDouble(value))
+                {
+                    double side = helper.GetValidatedDouble(value);
+
+                    CreateSquare(side);
+                }
+                else
+                {
+                    Console.WriteLine(Constants.showErrorInputValue);
+                        
+                }
+                
+              
+            }
+
+            static void CreateSquare(double side)
+            {
+                square = new Square(side); //object square created     
+            }
+
+            static void ShowSquareArea()
+            {       
+                Console.WriteLine(Constants.showSquareArea + "{0}", square.SquareArea);
             }
 
             static double GetRoundedNumber(double number)
@@ -69,23 +90,8 @@ namespace OOP_SquareTask
                 return Math.Round(number, 2);
             }
 
-            static void CalculateSquareArea()
-            {
 
-                double side; // result side 
-                Console.WriteLine("Enter SQUARE side : ");
-                string sideInput = Console.ReadLine(); // user input value for side of square 
-
-                if (double.TryParse(sideInput, out side)) // check if userr input is double
-                {
-                    double areaOfSquare = Math.Pow(side, 2); // area of square calculation
-                    Console.WriteLine("Area of SQAURE  equals to {0}", areaOfSquare);
-                }
-                else
-                {
-                    Console.WriteLine("Enter SQUARE side validation failed");
-                }
-            }
+           
 
         }
     }
