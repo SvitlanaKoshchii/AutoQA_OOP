@@ -1,35 +1,34 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace OOP_SquareTask
 {
     class Square
     {
-        public double side;
-
+        private double _side;
+       
         //Consctructor with side parameter
-        public Square(double s)
+        public Square(double side)
         {
-            side = s;
+            _side = side;
         }
-
-        //method calculate area of square 
-        public void CalculateSquareArea() { }
 
         //property Side
         public double Side
         {
             get
             {
-                return side;
-            }
-
-            set // add validatation that input value for side is double
-            {
-                side = value;
+                return _side;
             }
         }
+
+        //property SideArea to calculate area of square
+        public double SquareArea
+        {
+            get
+            {
+                return Math.Pow(_side, 2);
+            }
+        }        
     }
 }
 
