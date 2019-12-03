@@ -1,28 +1,23 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace OOP_SquareTask
 {
     class Circle
     {
-        public double radius;
+        private double _radius;
 
         //Consctructor with radius parameter
-        public Circle(double r)
+        public Circle(double radius)
         {
-            radius = r;
+            _radius = radius;
         }
 
-        //method calculate area of circle 
-        public void CalculateCircleArea() { }
-
-        //property RAdius
+        //property Radius
         public double Radius
         {
             get
             {
-                return radius;
+                return _radius;
             }
         }
 
@@ -31,7 +26,7 @@ namespace OOP_SquareTask
         {
             get
             {
-                return Math.Pow(radius, 2) * Math.PI;
+                return Math.Pow(_radius, 2) * Math.PI;
             }
         }
     }
