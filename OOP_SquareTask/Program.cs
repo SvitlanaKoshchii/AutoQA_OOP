@@ -6,42 +6,57 @@ namespace OOP_SquareTask
     {                
         private static Square square;
         private static Circle circle;
-        private static ValidationHelper helper;
-
-        
+        private static Helper helper;
+                
         static void Main(string[] args)
         {
-            helper = new ValidationHelper();
-            
-            CheckInputAttempt();
+            helper = new Helper();
 
-            static void CheckInputAttempt() //check inputed attempt
+            CheckInputSquareAttempt();
+            CheckInputCircleAttempt();
+
+            static void CheckInputSquareAttempt() //check inputed attempt
             {
                 int inputAttempt = 0;
+
                 for (; inputAttempt < Constants.maxAttempt; inputAttempt++)
-                {
-                    EnterSquareSide();                                        
+                {                   
+                    EnterSquareSide();
+
+                    if (square != null)
+                    {
+                        break;
+                    }
                 }
 
                 if (inputAttempt == Constants.maxAttempt)
                 {
-                    CreateSquare(GetRandomValue());
-                    ShowSquareArea();
+                    CreateSquare(helper.GetRandomValue());
                 }
+
+                ShowSquareArea();
             }
 
-            static double GetRandomValue() // generate randon value instead of user input
+            static void CheckInputCircleAttempt() //check inputed attempt
             {
+                int inputAttempt = 0;
 
-                Console.WriteLine(Constants.showAttemptsEnded);
+                for (; inputAttempt < Constants.maxAttempt; inputAttempt++)
+                {
+                    EnterCircleRadius();
 
-                Random random = new Random();
+                    if (circle != null)
+                    {
+                        break;
+                    }
+                }
 
-                double value = random.NextDouble() * (Constants.maxRandomBorder - Constants.minRandomBorder) + Constants.minRandomBorder;
-                value = GetRoundedNumber(value);
-                Console.WriteLine("Random value = {0}", value);
+                if (inputAttempt == Constants.maxAttempt)
+                {
+                    CreateCirle(helper.GetRandomValue());
+                }
 
-                return value;
+                ShowCircleArea();
             }
 
             static void EnterSquareSide() // method where user inputs value
@@ -49,43 +64,48 @@ namespace OOP_SquareTask
                 Console.WriteLine(Constants.enterSquareSide);
       
                 string sideInput = Console.ReadLine(); // user input value for side of square
-              
-                ValidateEnteredValue(sideInput);            
+
+                if (helper.GetDoubleFromString(sideInput) != Constants.wrongDouble)
+                {
+                    double validValue = helper.GetValidatedDouble(sideInput);
+
+                    CreateSquare(helper.GetRoundedNumber(validValue));
+                }               
             }
 
-         
-
-            static void ValidateEnteredValue(string value) // validate entered data 
+            static void EnterCircleRadius() // method where user inputs value
             {
-                if (helper.IsDouble(value))
-                {
-                    double side = helper.GetValidatedDouble(value);
+                Console.WriteLine(Constants.enterCircleRadius);
 
-                    CreateSquare(side);
-                }
-                else
+                string radiusInput = Console.ReadLine(); // user input value for raduis of circle
+             
+                if (helper.GetDoubleFromString(radiusInput) != Constants.wrongDouble)
                 {
-                    Console.WriteLine(Constants.showErrorInputValue);
-                        
-                }
+                    double validValue = helper.GetValidatedDouble(radiusInput);
 
-            }
+                    CreateCirle(helper.GetRoundedNumber(validValue));
+                }               
+            }         
 
             static void CreateSquare(double side)
             {
                 square = new Square(side); //object square created     
             }
 
+            static void CreateCirle(double radius)
+            {
+                circle = new Circle(radius); //object circle created     
+            }
+
             static void ShowSquareArea()
             {       
-                Console.WriteLine(Constants.showSquareArea + "{0}", square.SquareArea);
+                Console.WriteLine(Constants.showSquareArea + "{0}", helper.GetRoundedNumber(square.SquareArea));
             }
 
-            static double GetRoundedNumber(double number)
+            static void ShowCircleArea()
             {
-                return Math.Round(number, 2);
+                Console.WriteLine(Constants.showCircleArea + "{0}", helper.GetRoundedNumber(circle.CircleArea));
             }
-
         }
     }
 }
