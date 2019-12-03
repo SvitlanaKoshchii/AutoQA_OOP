@@ -17,7 +17,7 @@ namespace OOP_SquareTask
             return false;
         }
 
-        public double GetValidatedDouble(string side)
+        public double GetValidatedDouble(string side) // method to replace come to dom in user input
         {
             return double.Parse(side.Replace(",", "."));
         }

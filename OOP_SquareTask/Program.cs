@@ -12,11 +12,10 @@ namespace OOP_SquareTask
         static void Main(string[] args)
         {
             helper = new ValidationHelper();
+            
             CheckInputAttempt();
 
-
-
-            static void CheckInputAttempt()
+            static void CheckInputAttempt() //check inputed attempt
             {
                 int inputAttempt = 0;
                 for (; inputAttempt < Constants.maxAttempt; inputAttempt++)
@@ -31,7 +30,7 @@ namespace OOP_SquareTask
                 }
             }
 
-            static double GetRandomValue()
+            static double GetRandomValue() // generate randon value instead of user input
             {
 
                 Console.WriteLine(Constants.showAttemptsEnded);
@@ -39,26 +38,24 @@ namespace OOP_SquareTask
                 Random random = new Random();
 
                 double value = random.NextDouble() * (Constants.maxRandomBorder - Constants.minRandomBorder) + Constants.minRandomBorder;
-                value = Math.Round(value,2);
-                //value = GetRandomValue(value);
-                Console.WriteLine("Random radius = {0}", value);
+                value = GetRoundedNumber(value);
+                Console.WriteLine("Random value = {0}", value);
 
                 return value;
             }
 
-            static void EnterSquareSide()
+            static void EnterSquareSide() // method where user inputs value
             {
                 Console.WriteLine(Constants.enterSquareSide);
       
                 string sideInput = Console.ReadLine(); // user input value for side of square
               
-                ValidateEnteredValue(sideInput);                
-
+                ValidateEnteredValue(sideInput);            
             }
 
          
 
-            static void ValidateEnteredValue(string value)
+            static void ValidateEnteredValue(string value) // validate entered data 
             {
                 if (helper.IsDouble(value))
                 {
@@ -71,8 +68,7 @@ namespace OOP_SquareTask
                     Console.WriteLine(Constants.showErrorInputValue);
                         
                 }
-                
-              
+
             }
 
             static void CreateSquare(double side)
@@ -89,9 +85,6 @@ namespace OOP_SquareTask
             {
                 return Math.Round(number, 2);
             }
-
-
-           
 
         }
     }

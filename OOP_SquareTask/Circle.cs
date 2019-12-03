@@ -24,15 +24,15 @@ namespace OOP_SquareTask
             {
                 return radius;
             }
+        }
 
-            set // add validatation that input value for radius is double
+        //property CircleArea to calculate area of circle
+        public double CircleArea
+        {
+            get
             {
-                radius = value;
+                return Math.Pow(radius, 2) * Math.PI;
             }
         }
     }
 }
-
-
-
-

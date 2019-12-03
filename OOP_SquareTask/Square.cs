@@ -21,7 +21,7 @@ namespace OOP_SquareTask
             }
         }
 
-        //property SideArea to calculate area of square
+        //property SuqareArea to calculate area of square
         public double SquareArea
         {
             get
