@@ -37,7 +37,7 @@ namespace OOP_SquareTask
             return value;
         }
 
-        public double GetDoubleFromString(string value) // method to retrieve double from enered sctring
+        public double GetDoubleFromString(string value) // method to retrieve double from entered string
         {
             if (IsDouble(value))
             {
