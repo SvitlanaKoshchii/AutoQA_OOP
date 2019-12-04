@@ -15,6 +15,7 @@ namespace OOP_Task1_2_CircleSquareCalculations
         public const string showSquareArea = "Square Area = ";
         public const string showCircleArea = "Circle Area = ";
         public const string showErrorInputValue = "Invalid input. Value should be numerical and can contain dot or coma.";
+        public const string showErrorPositiveNumber = "Invalid input. Value should be positive";
         public const string showAttemptsEnded = "Last attempt is reached. Value is selected randomly.";
 
         public const string showSquarePlacedCircle = "Square is placed in Circle and touches the borders.";
