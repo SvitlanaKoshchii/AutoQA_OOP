@@ -14,7 +14,7 @@ namespace OOP_SquareTask
         public const string enterCircleRadius = "Enter CIRCLE radius : ";
         public const string showSquareArea = "Square Area = ";
         public const string showCircleArea = "Circle Area = ";
-        public const string showErrorInputValue = "Invalid input. Please, enter number which can contain dot or coma.";
+        public const string showErrorInputValue = "Invalid input. Value should be numerical and can contain dot or coma.";
         public const string showAttemptsEnded = "Last attempt is reached. Value is selected randomly.";
     }
 }

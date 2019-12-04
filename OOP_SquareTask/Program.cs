@@ -13,6 +13,7 @@ namespace OOP_SquareTask
             helper = new Helper();
 
             CheckInputSquareAttempt();
+            Console.WriteLine();
             CheckInputCircleAttempt();
 
             static void CheckInputSquareAttempt() //check inputed attempt
