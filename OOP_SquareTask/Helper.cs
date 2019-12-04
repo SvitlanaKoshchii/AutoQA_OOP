@@ -13,7 +13,7 @@ namespace OOP_Task1_2_CircleSquareCalculations
             return false;
         }
 
-        public double GetValidatedDouble(string side) // method to replace coma to dot in user input
+        public double ReplaceComaToDot(string side) // method to replace coma to dot in user input
         {
             return double.Parse(side.Replace(",", "."));
         }
@@ -40,14 +40,21 @@ namespace OOP_Task1_2_CircleSquareCalculations
         public double GetDoubleFromString(string value) // method to retrieve double from entered string
         {
             if (IsDouble(value))
-            {
-                double roundedValue = GetValidatedDouble(value);
+            {                
+                double validDouble = ReplaceComaToDot(value);
 
-                return roundedValue;
+                if (validDouble > 0) //check for positive input
+                {
+                    return validDouble;
+                }
+                
+                Console.WriteLine(Constants.showErrorPositiveNumber);
+
+                return Constants.wrongDouble;                
             }
             else
             {
-                Console.WriteLine(Constants.showErrorInputValue);
+                Console.WriteLine(Constants.showErrorInputValue); //message value is not double
 
                 return Constants.wrongDouble;
             }            
