@@ -1,5 +1,5 @@
 ﻿using System;
-namespace OOP_SquareTask
+namespace OOP_Task1_2_CircleSquareCalculations
 {
     public class Helper
     {
