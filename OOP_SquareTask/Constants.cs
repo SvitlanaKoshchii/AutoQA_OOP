@@ -16,5 +16,13 @@ namespace OOP_SquareTask
         public const string showCircleArea = "Circle Area = ";
         public const string showErrorInputValue = "Invalid input. Value should be numerical and can contain dot or coma.";
         public const string showAttemptsEnded = "Last attempt is reached. Value is selected randomly.";
+
+        public const string showSquarePlacedCircle = "Square is placed in Circle and touches the borders.";
+        public const string showSquareLessCircle = "Square is placed in Circle and doesn't touch the borders.";
+        public const string showSquareNotPlacedCircle = "The Square is NOT placed in the Circle.";
+
+        public const string showCirclePlacedSquare = "Circle is placed in the Square and touches the borders.";
+        public const string showCircleLessSquare = "Circle is placed in Square and doesn't touch the borders.";
+        public const string showCircleNotPlacedSquare = "Circle is NOT placed in Square.";
     }
 }

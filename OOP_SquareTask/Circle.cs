@@ -29,5 +29,14 @@ namespace OOP_SquareTask
                 return Math.Pow(_radius, 2) * Math.PI;
             }
         }
+
+        //property CircleDiameter to calculate area of circle
+        public double CircleDiameter
+        {
+            get
+            {
+                return _radius * 2;
+            }
+        }
     }
 }

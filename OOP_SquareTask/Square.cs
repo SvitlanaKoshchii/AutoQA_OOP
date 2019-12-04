@@ -28,7 +28,17 @@ namespace OOP_SquareTask
             {
                 return Math.Pow(_side, 2);
             }
-        }        
+        }
+
+        //property SquareDiagonal to calculate diagonal of square
+        public double SquareDiagonal
+        {
+            get 
+            { 
+                    return _side* Math.Sqrt(2);
+            }
+        }
+        
     }
 }
 
