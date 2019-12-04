@@ -3,7 +3,7 @@ namespace OOP_SquareTask
 {
     public class Helper
     {
-        public bool IsDouble(string enteredSide)
+        public bool IsDouble(string enteredSide) //method to check if entered value is double 
         {
             if (double.TryParse(enteredSide, out double side)) // check if user input is double
             {
@@ -13,12 +13,12 @@ namespace OOP_SquareTask
             return false;
         }
 
-        public double GetValidatedDouble(string side) // method to replace come to dom in user input
+        public double GetValidatedDouble(string side) // method to replace coma to dot in user input
         {
             return double.Parse(side.Replace(",", "."));
         }
 
-        public double GetRoundedNumber(double number)
+        public double GetRoundedNumber(double number) //method to round value up to specific to the particular number of fractional digits
         {
             return Math.Round(number, Constants.roundingNumber);
         }
@@ -37,7 +37,7 @@ namespace OOP_SquareTask
             return value;
         }
 
-        public double GetDoubleFromString(string value)
+        public double GetDoubleFromString(string value) // method to retrieve double from enered sctring
         {
             if (IsDouble(value))
             {

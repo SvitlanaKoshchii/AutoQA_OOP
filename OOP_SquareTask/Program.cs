@@ -16,7 +16,7 @@ namespace OOP_SquareTask
             Console.WriteLine();
             CheckInputCircleAttempt();
 
-            static void CheckInputSquareAttempt() //check inputed attempt
+            static void CheckInputSquareAttempt() //check inputed attempt for Square
             {
                 int inputAttempt = 0;
 
@@ -38,7 +38,7 @@ namespace OOP_SquareTask
                 ShowSquareArea();
             }
 
-            static void CheckInputCircleAttempt() //check inputed attempt
+            static void CheckInputCircleAttempt() //check inputed attempt for Circle
             {
                 int inputAttempt = 0;
 
@@ -60,7 +60,7 @@ namespace OOP_SquareTask
                 ShowCircleArea();
             }
 
-            static void EnterSquareSide() // method where user inputs value
+            static void EnterSquareSide() // method where user inputs value for square side
             {
                 Console.WriteLine(Constants.enterSquareSide);
       
@@ -74,7 +74,7 @@ namespace OOP_SquareTask
                 }               
             }
 
-            static void EnterCircleRadius() // method where user inputs value
+            static void EnterCircleRadius() // method where user inputs value for circle radius 
             {
                 Console.WriteLine(Constants.enterCircleRadius);
 
@@ -98,12 +98,12 @@ namespace OOP_SquareTask
                 circle = new Circle(radius); //object circle created     
             }
 
-            static void ShowSquareArea()
+            static void ShowSquareArea() //display result of square area
             {       
                 Console.WriteLine(Constants.showSquareArea + "{0}", helper.GetRoundedNumber(square.SquareArea));
             }
 
-            static void ShowCircleArea()
+            static void ShowCircleArea() //display result of circle area
             {
                 Console.WriteLine(Constants.showCircleArea + "{0}", helper.GetRoundedNumber(circle.CircleArea));
             }
