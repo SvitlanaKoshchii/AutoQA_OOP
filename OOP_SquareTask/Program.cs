@@ -72,7 +72,7 @@ namespace OOP_Task1_2_CircleSquareCalculations
 
                 double inputDouble = helper.GetDoubleFromString(sideInput);
 
-                if (inputDouble != Constants.wrongDouble) // check if input value is double
+                if(inputDouble != Constants.wrongDouble) // check if input value is double what we need              
                 {                    
                     CreateSquare(helper.GetRoundedNumber(inputDouble));
                 }
@@ -86,7 +86,7 @@ namespace OOP_Task1_2_CircleSquareCalculations
 
                 double inputDouble = helper.GetDoubleFromString(radiusInput);
 
-                if (inputDouble != Constants.wrongDouble) // check if input value is double
+                if (inputDouble != Constants.wrongDouble) // check if input value is double what we need    
                 {    
                     CreateCirle(helper.GetRoundedNumber(inputDouble));
                 }
