@@ -114,7 +114,7 @@ namespace OOP_Task1_2_CircleSquareCalculations
 
             static void CheckSquarePlacedCircle() //check if square placed the circle
             {
-                if (square.SquareDiagonal == circle.CircleDiameter)
+                if (circle.Radius <= square.Side/ Math.Sqrt(2))
                 {
                     Console.WriteLine(Constants.showSquarePlacedCircle);
                 }
@@ -130,7 +130,7 @@ namespace OOP_Task1_2_CircleSquareCalculations
 
             static void CheckCirclePlacedSquare() //check if circle placed the square
             {
-                if (circle.CircleDiameter == square.Side)
+                if (2*square.Side >= circle.Radius)
                 {
                     Console.WriteLine(Constants.showCirclePlacedSquare);
                 }
@@ -146,4 +146,3 @@ namespace OOP_Task1_2_CircleSquareCalculations
         }
     }
 }
-
