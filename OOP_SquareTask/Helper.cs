@@ -17,7 +17,7 @@ namespace OOP_Task1_2_CircleSquareCalculations
                 // Then in neutral language
                 !double.TryParse(replacedComa, System.Globalization.NumberStyles.Any, CultureInfo.InvariantCulture, out result))
             {
-                result = GetRoundedNumber(Constants.wrongDouble); // because if not use rounded method, double with a lot with 0 and other numbers after dot and ending not true 1
+                result = GetRoundedNumber(Constants.wrongDouble); // because if not use rounded method, double with a lot with 0 and other numbers after dot and != -1
             }
             return result;
         }
