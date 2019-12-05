@@ -23,7 +23,7 @@ namespace OOP_Task1_2_CircleSquareCalculations
         }
 
         public double ReplaceComaToDot(string side) // method to replace coma to dot in user input 
-        {           
+        {
             string replacedComa = side.Replace(",", ".");
 
             return double.Parse(replacedComa, CultureInfo.InvariantCulture);
@@ -52,23 +52,17 @@ namespace OOP_Task1_2_CircleSquareCalculations
         {
             double parsedDouble = GetDouble(value);
 
-            if (parsedDouble != Constants.wrongDouble)
+            if (parsedDouble > 0) // check that user did positive input
             {
-                if (parsedDouble > 0) // check that user did positiva input
-                {
-                    return parsedDouble;
-                }
-
-                Console.WriteLine(Constants.showErrorPositiveNumber);
-
-                return Constants.wrongDouble;
+                return parsedDouble;
             }
             else
             {
-                Console.WriteLine(Constants.showErrorInputValue); //message value is not double
+                Console.WriteLine(Constants.showErrorInputValue);
 
                 return Constants.wrongDouble;
             }
         }
     }
 }
+
