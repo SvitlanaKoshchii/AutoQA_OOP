@@ -5,7 +5,7 @@ namespace OOP_Task1_2_CircleSquareCalculations
     {
         public const double minRandomBorder = 0.5; // min random border
         public const double maxRandomBorder = 5; // max random border
-        public const double wrongDouble = -1; // if user write not correct value
+        public const double wrongDouble = -1.0; // if user write not correct value
 
         public const int roundingNumber = 2; // rounded entered value after point
         public const int maxAttempt = 3; //max invalid attempt
