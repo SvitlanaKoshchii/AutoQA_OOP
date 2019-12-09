@@ -1,21 +1,32 @@
 ﻿using System;
+using System.Globalization;
+
 namespace OOP_Task1_2_CircleSquareCalculations
 {
     public class Helper
     {
-        public bool IsDouble(string enteredSide) //method to check if entered value is double 
+        public double GetDouble(string enteredSide) //method to check if entered value is double 
         {
-            if (double.TryParse(enteredSide, out double side)) // check if user input is double
-            {
-                return true;
-            }
+            string replacedComa = enteredSide.Replace(",", ".");
+            double result;
 
-            return false;
+            // Try parsing in the current culture
+            if (!double.TryParse(replacedComa, System.Globalization.NumberStyles.Any, CultureInfo.CurrentCulture, out result) &&
+                // Then try in US english
+                !double.TryParse(replacedComa, System.Globalization.NumberStyles.Any, CultureInfo.GetCultureInfo("en-US"), out result) &&
+                // Then in neutral language
+                !double.TryParse(replacedComa, System.Globalization.NumberStyles.Any, CultureInfo.InvariantCulture, out result))
+            {
+                result = Constants.wrongDouble; 
+            }
+            return result;
         }
 
-        public double ReplaceComaToDot(string side) // method to replace coma to dot in user input
+        public double ReplaceComaToDot(string side) // method to replace coma to dot in user input 
         {
-            return double.Parse(side.Replace(",", "."));
+            string replacedComa = side.Replace(",", ".");
+
+            return double.Parse(replacedComa, CultureInfo.InvariantCulture);
         }
 
         public double GetRoundedNumber(double number) //method to round value up to specific to the particular number of fractional digits
@@ -39,25 +50,19 @@ namespace OOP_Task1_2_CircleSquareCalculations
 
         public double GetDoubleFromString(string value) // method to retrieve double from entered string
         {
-            if (IsDouble(value))
-            {                
-                double validDouble = ReplaceComaToDot(value);
+            double parsedDouble = GetDouble(value);
 
-                if (validDouble > 0) //check for positive input
-                {
-                    return validDouble;
-                }
-                
-                Console.WriteLine(Constants.showErrorPositiveNumber);
-
-                return Constants.wrongDouble;                
+            if (parsedDouble > 0) // check that user did positive input
+            {
+                return parsedDouble;
             }
             else
             {
-                Console.WriteLine(Constants.showErrorInputValue); //message value is not double
+                Console.WriteLine(Constants.showErrorInputValue);
 
                 return Constants.wrongDouble;
-            }            
+            }
         }
     }
 }
+
