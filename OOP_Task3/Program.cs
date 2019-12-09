@@ -6,11 +6,40 @@ namespace OOP_Task3
 {
     class Program
     {
+        private static MyArray array;
         static void Main(string[] args)
         {
+            EnterArrayRange(array.StartRange, array.EndRange); //null reference exception for now
+
+            static void EnterArrayRange(out int startValue, out int endValue) 
+            {
+  
+                Console.WriteLine(Constants.showEnterStartRange);
+                startValue = Int32.Parse(Console.ReadLine());
+
+                Console.WriteLine(Constants.showEnterEndRange);
+                endValue = Int32.Parse(Console.ReadLine());
+
+            }
+
+            static void ShowArray ()
+            {
+                array.GetArrElements();
+                Console.WriteLine(array.);
+            }
+
+            static int CountSumOfArrayItems()
+            {
+                int sum = 0;
+
+
+                return sum;
+            }
+
+            //works w/o methods different classes
             ArrayList myList = new ArrayList();
 
-           int rangeStart;
+            int rangeStart;
             int rangeEnd;
             int sum = 0;
 
@@ -22,23 +51,8 @@ namespace OOP_Task3
             Console.WriteLine("Enter a end of range");
             rangeEnd = Int32.Parse(Console.ReadLine());
 
-            
-           /* static void EnterArrayRange()
-            {
-                int rangeStart;
-                int rangeEnd;
-
-                //set start of array
-                Console.WriteLine("Enter a start of range");
-                rangeStart = Int32.Parse(Console.ReadLine());
-
-                //set end of array
-                Console.WriteLine("Enter a end of range");
-                rangeEnd = Int32.Parse(Console.ReadLine());
-            }*/
-
             //add elements to array depending on start and end range value
-            for (int i = rangeStart; i <= rangeEnd; i++) //end of range is wrong!!!! Need to fix
+            for (int i = rangeStart; i <= rangeEnd; i++) //end of range is wrong!!!!
             {
                 myList.Add(i);
             }
@@ -51,7 +65,7 @@ namespace OOP_Task3
             }
 
             //count sum (currentry does not includes last element of array. Need to fix)
-            if (myList.Count > 10)
+            if (myList.Count > Constants.minContOfArrayItems)
             {
                 foreach (int i in myList)
                 {
@@ -65,7 +79,7 @@ namespace OOP_Task3
             }
             else
             {
-                Console.WriteLine("Can not count sum. Array length is less than 10 items");
+                Console.WriteLine(Constants.showCanNotCountSum);
             }
             Console.ReadKey();
 
