@@ -7,10 +7,10 @@ namespace OOP_Task3
     class Program
     {
         static void Main(string[] args)
-        {     
+        {
             ArrayList myList = new ArrayList();
 
-            int rangeStart;
+           int rangeStart;
             int rangeEnd;
             int sum = 0;
 
@@ -21,6 +21,21 @@ namespace OOP_Task3
             //set end of array
             Console.WriteLine("Enter a end of range");
             rangeEnd = Int32.Parse(Console.ReadLine());
+
+            
+           /* static void EnterArrayRange()
+            {
+                int rangeStart;
+                int rangeEnd;
+
+                //set start of array
+                Console.WriteLine("Enter a start of range");
+                rangeStart = Int32.Parse(Console.ReadLine());
+
+                //set end of array
+                Console.WriteLine("Enter a end of range");
+                rangeEnd = Int32.Parse(Console.ReadLine());
+            }*/
 
             //add elements to array depending on start and end range value
             for (int i = rangeStart; i <= rangeEnd; i++) //end of range is wrong!!!! Need to fix
@@ -36,16 +51,22 @@ namespace OOP_Task3
             }
 
             //count sum (currentry does not includes last element of array. Need to fix)
-            foreach (int i in myList)
+            if (myList.Count > 10)
             {
-                if (i % 3 == 0 && i % 5 != 0) 
+                foreach (int i in myList)
                 {
-                    sum = sum + i;
-                }
-            
-            }
-            Console.WriteLine("Sum is {0}", sum);
+                    if (i % 3 == 0 && i % 5 != 0)
+                    {
+                        sum = sum + i;
 
+                    }
+                }
+                Console.WriteLine("Sum is {0}", sum);
+            }
+            else
+            {
+                Console.WriteLine("Can not count sum. Array length is less than 10 items");
+            }
             Console.ReadKey();
 
         }
