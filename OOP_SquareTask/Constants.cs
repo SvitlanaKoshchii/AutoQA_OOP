@@ -18,12 +18,12 @@ namespace OOP_Task1_2_CircleSquareCalculations
         public const string showErrorPositiveNumber = "Invalid input. Value should be positive";
         public const string showAttemptsEnded = "Last attempt is reached. Value is selected randomly.";
 
-        public const string showSquarePlacedCircle = "Square is placed in Circle and touches the borders.";
-        public const string showSquareLessCircle = "Square is placed in Circle and doesn't touch the borders.";
+        public const string showSquarePlacedCircle = "Square is placed in Circle.";
+        //public const string showSquareLessCircle = "Square is placed in Circle and doesn't touch the borders.";
         public const string showSquareNotPlacedCircle = "The Square is NOT placed in the Circle.";
 
-        public const string showCirclePlacedSquare = "Circle is placed in the Square and touches the borders.";
-        public const string showCircleLessSquare = "Circle is placed in Square and doesn't touch the borders.";
+        public const string showCirclePlacedSquare = "Circle is placed in the Square.";
+        //public const string showCircleLessSquare = "Circle is placed in Square and doesn't touch the borders.";
         public const string showCircleNotPlacedSquare = "Circle is NOT placed in Square.";
     }
 }
