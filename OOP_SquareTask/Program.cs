@@ -12,119 +12,14 @@ namespace OOP_Task1_2_CircleSquareCalculations
         {
             helper = new Helper();
 
-            string circleFigure = "CIRCLE";
-            string squareFigure = "SQUARE";
+            Square square = new Square(helper.GetValidDoubleValue(Constants.side, Constants.squareFigure));
+            helper.showAreaResult(Constants.squareFigure, square.SquareArea);
 
-            Circle circle = new Circle(helper.GetValidDoubleValue("RADIUS", circleFigure));
-            helper.showAreaResult(circleFigure, circle.CircleArea);
-
-            Square square = new Square(helper.GetValidDoubleValue("SIDE", squareFigure));
-            helper.showAreaResult(squareFigure, square.SquareArea);
+            Circle circle = new Circle(helper.GetValidDoubleValue(Constants.radius, Constants.circleFigure));
+            helper.showAreaResult(Constants.circleFigure, circle.CircleArea);
 
             helper.showFiguresPlaceEachOther(circle.CircleArea, square.SquareArea);
-
-            //CheckInputSquareAttempt();
-            // Console.WriteLine();
-            //CheckInputCircleAttempt();
-
-            //Console.WriteLine();
-            // CheckSquarePlacedCircle();
-            //CheckCirclePlacedSquare();
-
-            /*static void CheckInputSquareAttempt() //check inputed attempt for Square
-            {
-                int inputAttempt = 0;
-
-                for (; inputAttempt < Constants.maxAttempt; inputAttempt++)
-                {
-                    EnterSquareSide();
-
-                    if (square != null)
-                    {
-                        break;
-                    }
-                }
-
-                if (inputAttempt == Constants.maxAttempt)
-                {
-                    CreateSquare(helper.GetRandomValue());
-                }
-
-                ShowSquareArea();
-            }
-
-            static void CheckInputCircleAttempt() //check inputed attempt for Circle
-            {
-                int inputAttempt = 0;
-
-                for (; inputAttempt < Constants.maxAttempt; inputAttempt++)
-                {
-                    EnterCircleRadius();
-
-                    if (circle != null)
-                    {
-                        break;
-                    }
-                }
-
-                if (inputAttempt == Constants.maxAttempt)
-                {
-                    CreateCirle(helper.GetRandomValue());
-                }
-
-                ShowCircleArea();
-            }
-
-            static void EnterSquareSide() // method where user inputs value for square side
-            {
-                Console.WriteLine(Constants.enterSquareSide);
-
-                string sideInput = Console.ReadLine(); // user input value for side of square
-
-                double inputDouble = helper.GetDoubleFromString(sideInput);
-
-                if (inputDouble != Constants.wrongDouble) // check if input value is double
-                {
-                    CreateSquare(helper.GetRoundedNumber(inputDouble));
-                }
-            }
-
-            static void EnterCircleRadius() // method where user inputs value for circle radius 
-            {
-                Console.WriteLine(Constants.enterCircleRadius);
-
-                string radiusInput = Console.ReadLine(); // user input value for raduis of circle
-
-                double inputDouble = helper.GetDoubleFromString(radiusInput);
-
-                if (inputDouble != Constants.wrongDouble) // check if input value is double
-                {
-                    CreateCirle(helper.GetRoundedNumber(inputDouble));
-                }
-            }
-
-            static void CreateSquare(double side)
-            {
-                square = new Square(side); //object square created     
-            }
-
-            static void CreateCirle(double radius)
-            {
-                circle = new Circle(radius); //object circle created     
-            }
-
-            static void ShowSquareArea() //display result of square area
-            {
-                Console.WriteLine(Constants.showSquareArea + "{0}", helper.GetRoundedNumber(square.SquareArea));
-            }
-
-            static void ShowCircleArea() //display result of circle area
-            {
-                Console.WriteLine(Constants.showCircleArea + "{0}", helper.GetRoundedNumber(circle.CircleArea));
-            }
-            }
-            */
-
+           
         }
     }
 }
