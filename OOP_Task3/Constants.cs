@@ -10,8 +10,9 @@ namespace OOP_Task3
     {
         public const int minContOfArrayItems = 10; // min random border
 
-        public const string showEnterStartRange = "Enter a start of range";
-        public const string showEnterEndRange = "Enter a end of range";
-        public const string showCanNotCountSum = "Can not count sum. Array length is less than 10 items";
+        public const string showEnterStartRange = "Enter START of range:";
+        public const string showEnterEndRange = "Enter END of range:";
+        public const string showSum = "SUM of elements which are divisible by 3, but not 5: {0}";
+        public const string showCanNotCountSum = "Can not count SUM. Array length is less than 10 items.";
     }
 }
