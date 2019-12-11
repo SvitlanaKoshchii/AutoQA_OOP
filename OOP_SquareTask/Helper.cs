@@ -6,18 +6,19 @@ namespace OOP_Task1_2_CircleSquareCalculations
     public class Helper
     {
 
-        public double GetValidDoubleValue(string valueType, string figure)
+        public double GetValidDoubleValue(string valueType, string figure) //method to check if entered value valid
         {
             for (int i = 1; i <= Constants.maxAttempt; i++)
             {
                 Console.WriteLine(Constants.showEnterValue, valueType, figure);
 
-                string inputVal = Console.ReadLine().Replace(",", ".");
-                bool isDouble = double.TryParse(inputVal, out double result);
+                string inputVal = Console.ReadLine();
+                bool isDouble = IsDouble(inputVal);
+                double value = GetLocaleDoubleFromString(inputVal);
 
-                if (isDouble && isPositive(result))
+                if (isDouble && isPositive(value))
                 {
-                    return GetRoundedNumber(result);
+                    return GetRoundedNumber(value);
                 }
                 else
                 {
@@ -27,7 +28,17 @@ namespace OOP_Task1_2_CircleSquareCalculations
             return GetRandomValue();
         }
 
-        public void showAreaResult(string figure, double result)
+        public bool IsDouble(string inputValue)
+        {
+            if (double.TryParse(inputValue, out double result))
+            {
+                return true;
+            }
+
+            return false;
+        }
+
+        public void showAreaResult(string figure, double result) //methor to show results for calculated figure area
         {
             Console.WriteLine(Constants.showAreaResult, figure, GetRoundedNumber(result));
         }
@@ -52,7 +63,7 @@ namespace OOP_Task1_2_CircleSquareCalculations
             return value;
         }
 
-        public bool isPositive(double value)
+        public bool isPositive(double value) //method to check if value positive
         {
             if (value > 0)
             {
@@ -64,7 +75,7 @@ namespace OOP_Task1_2_CircleSquareCalculations
             }
         }
 
-        public void showFiguresPlaceEachOther(double circleArea, double squareArea)
+        public void showFiguresPlaceEachOther(double circleArea, double squareArea) //method to check if circle can be placed in square and vice versa
         {
             if (2 * Math.Sqrt(circleArea / Math.PI) <= Math.Sqrt(squareArea))
             {
@@ -78,12 +89,9 @@ namespace OOP_Task1_2_CircleSquareCalculations
 
         }
 
-        
-
-
-        /*public double GetDouble(string enteredSide) //method to check if entered value is double 
+        public double GetLocaleDoubleFromString(string value) //method to check if entered value is double 
         {
-            string replacedComa = enteredSide.Replace(",", ".");
+            string replacedComa = value.Replace(",", ".");
             double result;
 
             // Try parsing in the current culture
@@ -93,35 +101,11 @@ namespace OOP_Task1_2_CircleSquareCalculations
                 // Then in neutral language
                 !double.TryParse(replacedComa, System.Globalization.NumberStyles.Any, CultureInfo.InvariantCulture, out result))
             {
-                result = Constants.wrongDouble;
+                return Constants.zero;
             }
             return result;
         }
 
-        public double ReplaceComaToDot(string side) // method to replace coma to dot in user input 
-        {
-            string replacedComa = side.Replace(",", ".");
-
-            return double.Parse(replacedComa, CultureInfo.InvariantCulture);
-        }
-
-        
-
-        public double GetDoubleFromString(string value) // method to retrieve double from entered string
-        {
-            double parsedDouble = GetDouble(value);
-
-            if (parsedDouble > 0) // check that user did positive input
-            {
-                return parsedDouble;
-            }
-            else
-            {
-                Console.WriteLine(Constants.showErrorInputValue);
-
-                return Constants.wrongDouble;
-            }*/
     }
-
 }
 
