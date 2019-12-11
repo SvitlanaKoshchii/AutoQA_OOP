@@ -122,30 +122,6 @@ namespace OOP_Task1_2_CircleSquareCalculations
             {
                 Console.WriteLine(Constants.showCircleArea + "{0}", helper.GetRoundedNumber(circle.CircleArea));
             }
-            
-
-            static void CheckCirclePlacedSquare() //check if circle placed the square
-            {
-                if (2 * Math.Sqrt(circle.CircleArea / Math.PI) <= Math.Sqrt(square.SquareArea))
-                {
-                    Console.WriteLine(Constants.showCirclePlacedSquare);
-                }
-                else
-                {
-                    Console.WriteLine(Constants.showCircleNotPlacedSquare);
-                }
-            }
-
-            static void CheckSquarePlacedCircle() //check if square placed the circle
-            {
-                if (2 * Math.Sqrt(circle.CircleArea / Math.PI) >= Math.Sqrt(2) * Math.Sqrt(square.SquareArea))
-                {
-                    Console.WriteLine(Constants.showSquarePlacedCircle);
-                }
-                else
-                {
-                    Console.WriteLine(Constants.showSquareNotPlacedCircle);
-                }
             }
             */
 

@@ -24,10 +24,10 @@ namespace OOP_Task1_2_CircleSquareCalculations
 
         public const string showSquarePlacedCircle = "SQUARE is placed in CIRCLE. CIRCLE can't be places in SQUARE";
 
-        public const string showSquareNotPlacedCircle = "SQUARE is NOT placed in the CIRCLE.";
+        //public const string showSquareNotPlacedCircle = "SQUARE is NOT placed in the CIRCLE.";
 
         public const string showCirclePlacedSquare = "CIRCLE is placed in the SQUARE. SQUARE can't be placed in CIRCLE";
-        public const string showCircleNotPlacedSquare = "CIRCLE is NOT placed in SQUARE.";
+        //public const string showCircleNotPlacedSquare = "CIRCLE is NOT placed in SQUARE.";
 
         public const string showSquareAndCircleCanNotPlace = "Neither SQUARE can place in CIRCLE nor CIRCLE can place in SQUARE";
     }
