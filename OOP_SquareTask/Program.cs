@@ -12,15 +12,26 @@ namespace OOP_Task1_2_CircleSquareCalculations
         {
             helper = new Helper();
 
-            CheckInputSquareAttempt();
-            Console.WriteLine();
-            CheckInputCircleAttempt();
+            string circleFigure = "CIRCLE";
+            string squareFigure = "SQUARE";
 
-            Console.WriteLine();
-            CheckSquarePlacedCircle();
-            CheckCirclePlacedSquare();
+            Circle circle = new Circle(helper.GetValidDoubleValue("RADIUS", circleFigure));
+            helper.showAreaResult(circleFigure, circle.CircleArea);
 
-            static void CheckInputSquareAttempt() //check inputed attempt for Square
+            Square square = new Square(helper.GetValidDoubleValue("SIDE", squareFigure));
+            helper.showAreaResult(squareFigure, square.SquareArea);
+
+            helper.showFiguresPlaceEachOther(circle.CircleArea, square.SquareArea);
+
+            //CheckInputSquareAttempt();
+            // Console.WriteLine();
+            //CheckInputCircleAttempt();
+
+            //Console.WriteLine();
+            // CheckSquarePlacedCircle();
+            //CheckCirclePlacedSquare();
+
+            /*static void CheckInputSquareAttempt() //check inputed attempt for Square
             {
                 int inputAttempt = 0;
 
@@ -73,7 +84,7 @@ namespace OOP_Task1_2_CircleSquareCalculations
                 double inputDouble = helper.GetDoubleFromString(sideInput);
 
                 if (inputDouble != Constants.wrongDouble) // check if input value is double
-                {                    
+                {
                     CreateSquare(helper.GetRoundedNumber(inputDouble));
                 }
             }
@@ -87,7 +98,7 @@ namespace OOP_Task1_2_CircleSquareCalculations
                 double inputDouble = helper.GetDoubleFromString(radiusInput);
 
                 if (inputDouble != Constants.wrongDouble) // check if input value is double
-                {    
+                {
                     CreateCirle(helper.GetRoundedNumber(inputDouble));
                 }
             }
@@ -111,6 +122,7 @@ namespace OOP_Task1_2_CircleSquareCalculations
             {
                 Console.WriteLine(Constants.showCircleArea + "{0}", helper.GetRoundedNumber(circle.CircleArea));
             }
+            
 
             static void CheckCirclePlacedSquare() //check if circle placed the square
             {
@@ -126,7 +138,7 @@ namespace OOP_Task1_2_CircleSquareCalculations
 
             static void CheckSquarePlacedCircle() //check if square placed the circle
             {
-                if(2 * Math.Sqrt(circle.CircleArea / Math.PI) >= Math.Sqrt(2)*Math.Sqrt(square.SquareArea))
+                if (2 * Math.Sqrt(circle.CircleArea / Math.PI) >= Math.Sqrt(2) * Math.Sqrt(square.SquareArea))
                 {
                     Console.WriteLine(Constants.showSquarePlacedCircle);
                 }
@@ -135,8 +147,8 @@ namespace OOP_Task1_2_CircleSquareCalculations
                     Console.WriteLine(Constants.showSquareNotPlacedCircle);
                 }
             }
+            */
 
-            
         }
     }
 }
