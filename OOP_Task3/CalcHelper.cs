@@ -9,18 +9,22 @@ namespace OOP_Task3
         private int _endRange;
         ArrayList myList = new ArrayList();
 
-        public void GetRangeValues()
+        public void GetStartRangeValue()
         {
             //set start range
             Console.WriteLine(Constants.showEnterStartRange);
             string startVal = Console.ReadLine();
             bool isStartNumerical = int.TryParse(startVal, out _startRange);
+        }
 
+        public void GetEndRangeValue()
+        {
             //set end range
             Console.WriteLine(Constants.showEnterEndRange);
             string endVal = Console.ReadLine();
             bool isEndNumerical = int.TryParse(endVal, out _endRange);
         }
+        
 
         public ArrayList GetArrList()
         {
@@ -39,7 +43,7 @@ namespace OOP_Task3
             Console.WriteLine("View the array elements:");
             foreach (int i in GetArrList())
             {
-                Console.WriteLine(i);
+                Console.WriteLine(i + " ");
             }
         }
 
@@ -64,6 +68,21 @@ namespace OOP_Task3
             }
             Console.ReadKey();
         }
+
+        //public bool IsNumeric(string value)
+        //{
+        //    if (Int32.TryParse(value, out int result))
+        //    {
+        //        return true;
+        //    }
+        //    else
+        //    {
+
+        //        Console.WriteLine(Constants.showInvalidInput);
+        //        return false;
+                
+        //    }
+        //}
 
     }
 }

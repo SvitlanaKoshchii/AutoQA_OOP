@@ -25,6 +25,7 @@ namespace OOP_Task1_2_CircleSquareCalculations
                     Console.WriteLine(Constants.showErrorInputValue, i, Constants.maxAttempt);
                 }
             }
+
             return GetRandomValue();
         }
 
@@ -103,6 +104,7 @@ namespace OOP_Task1_2_CircleSquareCalculations
             {
                 return Constants.zero;
             }
+
             return result;
         }
 

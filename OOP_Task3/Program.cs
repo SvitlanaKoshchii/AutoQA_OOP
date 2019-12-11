@@ -11,7 +11,9 @@ namespace OOP_Task3
         {
             calcHelper = new CalcHelper();
 
-            calcHelper.GetRangeValues();
+            calcHelper.GetStartRangeValue();
+            calcHelper.GetEndRangeValue();
+            calcHelper.PrintArrList();
             calcHelper.CalculateSum();
 
         }
