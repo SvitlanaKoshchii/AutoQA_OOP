@@ -1,5 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 
 namespace OOP_Task4
@@ -7,13 +7,34 @@ namespace OOP_Task4
     class Helper
     {
         private string _initialStr;
-        private string _resultSrt;
 
         public void GetWord()
         {
             Console.WriteLine(Constants.showEnterWord);
             string inputVal = Console.ReadLine();
-            _initialStr = inputVal;
+            if (!IsWordContainDigit(inputVal))
+            {
+                _initialStr = inputVal;
+                
+            }
+            else 
+            {
+                Console.WriteLine(Constants.showWrongWord);
+                GetWord();
+            }
+        }
+
+        public bool IsWordContainDigit(string str)
+        {
+            bool isDigitPresent = str.Any(c => char.IsDigit(c));
+            if (isDigitPresent)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
 
         public string ReverseWord(string _initialStr)
@@ -21,10 +42,10 @@ namespace OOP_Task4
             StringBuilder sb = new StringBuilder(_initialStr.Length);
             for (int i = _initialStr.Length; i-- != 0;)
             {
-                sb.Append(_initialStr[i]); 
+                sb.Append(_initialStr[i]);
             }
-           
-            return sb.ToString();            
+
+            return sb.ToString();
         }
 
         public void ShowResult()
@@ -33,11 +54,11 @@ namespace OOP_Task4
             {
                 Console.WriteLine(Constants.showWordIsPalindrome, _initialStr);
             }
-            else 
+            else
             {
                 Console.WriteLine(Constants.showWordNotPalindrome, _initialStr);
             }
-        
+
         }
 
     }
