@@ -5,9 +5,7 @@ VisualStudioVersion = 16.0.29519.87
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OOP_Task1_2_CircleSquareCalculations", "OOP_SquareTask\OOP_Task1_2_CircleSquareCalculations.csproj", "{C4C16542-0992-4054-9594-7C86DA33A5F0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OOP_Task3", "OOP_Task3\OOP_Task3.csproj", "{81C2730B-ED33-4736-A2B0-D56A4955C4F5}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "task3", "task3\task3.csproj", "{1E82F75C-D46E-4D2A-B359-E3CDBA0F1B46}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OOP_Task3", "task3\OOP_Task3.csproj", "{1E82F75C-D46E-4D2A-B359-E3CDBA0F1B46}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -19,10 +17,6 @@ Global
 		{C4C16542-0992-4054-9594-7C86DA33A5F0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C4C16542-0992-4054-9594-7C86DA33A5F0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C4C16542-0992-4054-9594-7C86DA33A5F0}.Release|Any CPU.Build.0 = Release|Any CPU
-		{81C2730B-ED33-4736-A2B0-D56A4955C4F5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{81C2730B-ED33-4736-A2B0-D56A4955C4F5}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{81C2730B-ED33-4736-A2B0-D56A4955C4F5}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{81C2730B-ED33-4736-A2B0-D56A4955C4F5}.Release|Any CPU.Build.0 = Release|Any CPU
 		{1E82F75C-D46E-4D2A-B359-E3CDBA0F1B46}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{1E82F75C-D46E-4D2A-B359-E3CDBA0F1B46}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1E82F75C-D46E-4D2A-B359-E3CDBA0F1B46}.Release|Any CPU.ActiveCfg = Release|Any CPU
