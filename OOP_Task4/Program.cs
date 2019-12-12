@@ -4,9 +4,14 @@ namespace OOP_Task4
 {
     class Program
     {
+        private static Helper helper;
+
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            helper = new Helper();
+
+            helper.GetWord();
+            helper.ShowResult();
         }
     }
 }

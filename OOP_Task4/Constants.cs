@@ -4,7 +4,10 @@ using System.Text;
 
 namespace OOP_Task4
 {
-    class Constants
+    static class Constants
     {
+        public const string showEnterWord = "Enter any word:";
+        public const string showWordIsPalindrome = "Your word {0} is palindrome.";
+        public const string showWordNotPalindrome = "Your word {0} is NOT palindrome.";
     }
 }
